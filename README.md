@@ -38,7 +38,7 @@ const res = await Axios.get(
 
 This project is deployed on Vercel.
 
-You can view it [here].(https://vercel.com/chad-s-projects-353ab72c/appl-income-statement-api-table)
+You can view it [here](https://vercel.com/chad-s-projects-353ab72c/appl-income-statement-api-table).
 
 Be aware, the API key provided can only be called upon 250 times per day with the free plan. If the table fails to fetch the statements, this is likely why.
 
