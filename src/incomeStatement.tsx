@@ -4,7 +4,7 @@ import Axios from "axios";
 const IncomeStatement = () => {
   const fetchStatement = async (): Promise<any> => {
     const res = await Axios.get(
-      "https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey=YOURKEYHERE"
+      "https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey=mI1rmAhgGhOMs5lSybAPl0BP0LqO1pKQ"
     );
     return res.data;
   };
