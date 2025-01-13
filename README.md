@@ -20,7 +20,7 @@ The application utilizes an API from Financial Modeling Prep, which provides the
 
 - Navigate to `incomeStatement.tsx` within the `src` folder.
 
-- Here you will this code:
+- Here you will see this code:
 
 ```ts
 const res = await Axios.get(
