@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply max-w-screen-lg font-normal leading-6 text-[#213547] font-sans;
+}
+
+body {
+  @apply w-screen flex place-items-center min-h-[100vh];
+}
+
+h1 {
+  @apply text-[3.2em];
+}
+
+.interactive {
+  @apply m-2 h-10 text-center border border-solid border-transparent rounded-lg text-[1em] font-medium bg-[#ebebee] cursor-pointer transition duration-200 ease-in hover:border-[#646cff];
+}
