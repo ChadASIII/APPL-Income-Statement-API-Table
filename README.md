@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# AAPL (Apple) Income Statement Table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple table that displays income statements from Apple.
 
-Currently, two official plugins are available:
+The application utilizes an API from Financial Modeling Prep, which provides the data listed within the table.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Here is the [API](https://site.financialmodelingprep.com/developer/docs#income-statements-financial-statements) from their website.
 
-## Expanding the ESLint configuration
+## How to Run the Project Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Clone the project
 
-- Configure the top-level `parserOptions` property like this:
+- Run `npm install` to install all dependencies.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Create an account on [Financial Modeling Prep](https://site.financialmodelingprep.com/)'s website.
+
+- Navigate to the [Income Statement API](https://site.financialmodelingprep.com/developer/docs#income-statements-financial-statements) while logged in to be given a free key for the API.
+
+- Return to the project within your development environment.
+
+- Navigate to `incomeStatement.tsx` within the `src` folder.
+
+- Here you will this code:
+
+```ts
+const res = await Axios.get(
+  "https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey=YOURKEYHERE"
+);
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Replace `YOURKEYHERE` with the key provided to you by Financial Modeling Prep. It should be located within the URL of the API.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Type `npm run dev` into the terminal of your production enviroment.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Follow the link provided when the project runs and you should see the populated table. From here you can filter and sort as you like.
