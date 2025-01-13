@@ -2,16 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply h-full;
+}
+
 :root {
-  @apply max-w-screen-lg font-normal leading-6 text-[#213547] font-sans;
+  @apply w-screen h-full font-normal leading-6 text-[#213547] font-sans;
+}
+
+#root {
+  @apply h-full flex flex-col justify-center align-middle;
 }
 
 body {
-  @apply w-screen flex place-items-center min-h-[100vh];
+  @apply h-full flex place-items-center;
 }
 
 h1 {
-  @apply text-[3.2em];
+  @apply text-[3.2em] leading-10;
 }
 
 .interactive {

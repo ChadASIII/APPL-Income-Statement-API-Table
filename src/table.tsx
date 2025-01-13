@@ -87,76 +87,82 @@ function Table() {
   return (
     <>
       <h1 className="p-8">AAPL Income Statements</h1>
-      <div className="flex flex-row justify-items-center">
-        <input
-          className="interactive w-32"
-          type="number"
-          placeholder="Start Year"
-          onChange={(e) =>
-            setTempYearRange({
-              ...tempYearRange,
-              start: parseInt(e.target.value),
-            })
-          }
-        />
-        <p className="text-5xl align-middle">-</p>
-        <input
-          className="interactive w-32"
-          type="number"
-          placeholder="End Year"
-          onChange={(e) =>
-            setTempYearRange({
-              ...tempYearRange,
-              end: parseInt(e.target.value),
-            })
-          }
-        />
-        <input
-          className="interactive"
-          type="number"
-          placeholder="Minimum Revenue"
-          onChange={(e) =>
-            setTempRevenueRange({
-              ...tempRevenueRange,
-              min: parseInt(e.target.value),
-            })
-          }
-        />
-        <p className="text-5xl align-middle">-</p>
-        <input
-          className="interactive"
-          type="number"
-          placeholder="Maximum Revenue"
-          onChange={(e) =>
-            setTempRevenueRange({
-              ...tempRevenueRange,
-              max: parseInt(e.target.value),
-            })
-          }
-        />
-        <input
-          className="interactive"
-          type="number"
-          placeholder="Minimum Net Income"
-          onChange={(e) =>
-            setTempNetIncomeRange({
-              ...tempNetIncomeRange,
-              min: parseInt(e.target.value),
-            })
-          }
-        />
-        <p className="text-5xl align-middle">-</p>
-        <input
-          className="interactive"
-          type="number"
-          placeholder="Maximum Net Income"
-          onChange={(e) =>
-            setTempNetIncomeRange({
-              ...tempNetIncomeRange,
-              max: parseInt(e.target.value),
-            })
-          }
-        />
+      <div className="flex flex-row flex-wrap justify-center justify-items-center">
+        <div className="justify-center inline-flex">
+          <input
+            className="interactive w-32"
+            type="number"
+            placeholder="Start Year"
+            onChange={(e) =>
+              setTempYearRange({
+                ...tempYearRange,
+                start: parseInt(e.target.value),
+              })
+            }
+          />
+          <p className="text-5xl align-middle">-</p>
+          <input
+            className="interactive w-32"
+            type="number"
+            placeholder="End Year"
+            onChange={(e) =>
+              setTempYearRange({
+                ...tempYearRange,
+                end: parseInt(e.target.value),
+              })
+            }
+          />
+        </div>
+        <div className="justify-center inline-flex">
+          <input
+            className="interactive"
+            type="number"
+            placeholder="Minimum Revenue"
+            onChange={(e) =>
+              setTempRevenueRange({
+                ...tempRevenueRange,
+                min: parseInt(e.target.value),
+              })
+            }
+          />
+          <p className="text-5xl align-middle">-</p>
+          <input
+            className="interactive"
+            type="number"
+            placeholder="Maximum Revenue"
+            onChange={(e) =>
+              setTempRevenueRange({
+                ...tempRevenueRange,
+                max: parseInt(e.target.value),
+              })
+            }
+          />
+        </div>
+        <div className="justify-center inline-flex">
+          <input
+            className="interactive"
+            type="number"
+            placeholder="Minimum Net Income"
+            onChange={(e) =>
+              setTempNetIncomeRange({
+                ...tempNetIncomeRange,
+                min: parseInt(e.target.value),
+              })
+            }
+          />
+          <p className="text-5xl align-middle">-</p>
+          <input
+            className="interactive"
+            type="number"
+            placeholder="Maximum Net Income"
+            onChange={(e) =>
+              setTempNetIncomeRange({
+                ...tempNetIncomeRange,
+                max: parseInt(e.target.value),
+              })
+            }
+          />
+        </div>
       </div>
       <div className="flex flex-row justify-center">
         <button className="interactive w-24" onClick={confirmFilters}>
@@ -176,30 +182,32 @@ function Table() {
         </select>
       </div>
       <div className="justify-items-center">
-        <table className="table-auto border-collapse border-2 border-black w-4/5">
+        <table className="table-auto border-collapse border-2 border-black w-auto">
           <thead>
             <tr>
-              <th className="border">Date</th>
-              <th className="border">Total Revenue</th>
-              <th className="border">Net Income</th>
-              <th className="border">Gross Profit</th>
-              <th className="border">EPS (Earnings Per Share)</th>
-              <th className="border">Operating Income</th>
+              <th className="border p-2">Date</th>
+              <th className="border p-2">Total Revenue</th>
+              <th className="border p-2">Net Income</th>
+              <th className="border p-2">Gross Profit</th>
+              <th className="border p-2">EPS (Earnings Per Share)</th>
+              <th className="border p-2">Operating Income</th>
             </tr>
           </thead>
           <tbody>
             {sortedTable.map((statement: any, index: any) => (
               <tr key={index}>
-                <td className="border">{statement.date}</td>
-                <td className="border">{statement.revenue.toLocaleString()}</td>
-                <td className="border">
+                <td className="border p-2">{statement.date}</td>
+                <td className="border p-2">
+                  {statement.revenue.toLocaleString()}
+                </td>
+                <td className="border p-2">
                   {statement.netIncome.toLocaleString()}
                 </td>
-                <td className="border">
+                <td className="border p-2">
                   {statement.grossProfit.toLocaleString()}
                 </td>
-                <td className="border">{statement.eps}</td>
-                <td className="border">
+                <td className="border p-2">{statement.eps}</td>
+                <td className="border p-2">
                   {statement.operatingIncome.toLocaleString()}
                 </td>
               </tr>
